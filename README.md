@@ -35,7 +35,7 @@ Copy code
     "ToDoListConnection": "Data Source=ToDoList.db"
   },
   "Jwt": {
-    "Key": "YourSuperSecretKey",
+    "Key": "YourSecretKey",
     "Issuer": "http://localhost:5246",
     "Audience": "http://localhost:5246",
     "ExpiryInMinutes": 60
