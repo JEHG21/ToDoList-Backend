@@ -38,8 +38,14 @@ namespace ToDoList_Backend.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterModel registerModel)
         {
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerModel.Password);
+            var existingUser = _context.Users.SingleOrDefault(u => u.Username == registerModel.Username);
 
+            if (existingUser != null)
+            {
+                return BadRequest(new { message = "Username already exists." });
+            }
+
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerModel.Password);
             var user = new User
             {
                 Username = registerModel.Username,
