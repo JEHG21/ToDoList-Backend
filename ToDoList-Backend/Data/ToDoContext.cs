@@ -11,6 +11,8 @@ namespace ToDoList_Backend.Data
 
         public DbSet<Tasks> Tasks { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Tasks>()
