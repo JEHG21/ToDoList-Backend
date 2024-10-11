@@ -1,4 +1,4 @@
-# ToDoListBackend
+# To-DoList Backend
 
 ## Overview
 This is the backend service for the To-Do List application, developed using .NET Core 7. It provides user authentication, task management, and connects to a SQLite database.
